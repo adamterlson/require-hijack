@@ -1,0 +1,36 @@
+{
+  "name": "require-mock",
+  "version": "0.0.0",
+  "description": "Mock node require calls, with support for mocking the entire module itself rather than only its properties.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --reporter spec --recursive --ui bdd",
+    "test-coverage": "./node_modules/istanbul/lib/cli.js cover -- ./node_modules/mocha/bin/_mocha --reporter spec --recursive --ui bdd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamterlson/require-mock.git"
+  },
+  "keywords": [
+    "node",
+    "require",
+    "mock",
+    "inject",
+    "unit",
+    "test"
+  ],
+  "author": "Adam Terlson",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "57eb107e050826800d58edcdbf041afce4fa717a",
+  "bugs": {
+    "url": "https://github.com/adamterlson/require-mock/issues"
+  },
+  "devDependencies": {
+    "mocha": "~1.13.0",
+    "chai": "~1.8.0",
+    "sinon": "~1.7.3",
+    "sinon-chai": "~2.4.0",
+    "istanbul": "~0.1.44"
+  }
+}
