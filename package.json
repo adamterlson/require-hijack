@@ -1,6 +1,6 @@
 {
   "name": "require-mock",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Mock node require calls, with support for mocking the entire module itself rather than only its properties.",
   "main": "index.js",
   "scripts": {
