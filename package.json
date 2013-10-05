@@ -1,7 +1,7 @@
 {
   "name": "require-hijack",
   "version": "0.1.0",
-  "description": "Mock node require calls, with support for mocking the entire module itself rather than only its properties.",
+  "description": "Hijack node require calls, with support for hijacking the entire module itself rather than only its properties.  Handy for unit testing and mocking require calls in sub modules!",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --reporter spec --recursive --ui bdd",
