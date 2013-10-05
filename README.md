@@ -18,7 +18,7 @@ This is another library that manages to allow for mocking on require modules fro
 var realfs = require('fs');
 
 // From this point on out, all require calls will go through the mocker
-var requireMock = require('require-mock');
+var requireMock = require('require-hijack');
 
 var fakeFs = sinon.stub(fs);
 requiremock.replace('fs').with(fakeFs);

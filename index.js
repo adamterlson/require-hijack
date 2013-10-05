@@ -1,1 +1,1 @@
-exports = module.exports = require('./lib/require-mock');
+exports = module.exports = require('./lib/require-hijack');

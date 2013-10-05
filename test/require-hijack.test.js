@@ -1,6 +1,6 @@
 var requiremock = require('../index');
 
-describe('require-mock', function() {
+describe('require-hijack', function() {
 	it('should not call original fs', function () {
 		var stub = { readdir: sinon.spy() };
 

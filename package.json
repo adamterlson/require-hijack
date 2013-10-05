@@ -1,5 +1,5 @@
 {
-  "name": "require-mock",
+  "name": "require-hijack",
   "version": "0.1.0",
   "description": "Mock node require calls, with support for mocking the entire module itself rather than only its properties.",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adamterlson/require-mock.git"
+    "url": "https://github.com/adamterlson/require-hijack.git"
   },
   "keywords": [
     "node",
@@ -24,7 +24,7 @@
   "readmeFilename": "README.md",
   "gitHead": "57eb107e050826800d58edcdbf041afce4fa717a",
   "bugs": {
-    "url": "https://github.com/adamterlson/require-mock/issues"
+    "url": "https://github.com/adamterlson/require-hijack/issues"
   },
   "devDependencies": {
     "mocha": "~1.13.0",
