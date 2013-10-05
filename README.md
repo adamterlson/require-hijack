@@ -1,4 +1,4 @@
-Require Mock
+Require Hijack
 ============
 
 This is another library that manages to allow for mocking on require modules from a module that you're unit testing.
