@@ -1,4 +1,4 @@
-var requiremock = require('../index');
+/*var requiremock = require('../index');
 
 describe('require-mock', function() {
 	it('should not call original fs', function () {
@@ -14,4 +14,4 @@ describe('require-mock', function() {
 
 		stub.should.have.been.calledWithExactly('somedir')
 	});
-});
+});*/
