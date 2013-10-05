@@ -1,3 +1,4 @@
+var preloadedfs = require('fs');
 var requireMiddleware = require('../lib/require-middleware');
 var sandbox;
 
@@ -71,6 +72,16 @@ describe('require-middleware', function() {
 			require('foo');
 
 			expect(myMiddleware.getCall(0).args[0]).to.deep.equal({ name: 'foo' });
+		});
+
+		it('should execute middleware even on the preloaded native module', function () {
+			var myMiddleware = sinon.spy();
+
+			requireMiddleware.use(myMiddleware);
+
+			require('fs');
+
+			expect(myMiddleware.getCall(0).args[0]).to.deep.equal({ name: 'fs' });
 		});
 
 		it('should execute the entire middleware stack', function () {

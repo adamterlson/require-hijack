@@ -5,13 +5,15 @@ describe('require-mock', function() {
 		var stub;
 
 		requiremock.replace('fs').with(function (orig) {
-			return stub = sinon.stub(orig);
+			return stub = { readdir: sinon.spy() };
 		});
 
-		var fsmodule = require('./fixture/fsmodule');
+		// These need to be out of the test folder because require is getting stomped, but
+		// the test runner is loading all files in the folder
+		var fsmodule = require('../testmodules/fsmodule');
 
 		fsmodule();
 
-		stub.should.have.been.calledWithExactly('somedir')
+		stub.readdir.should.have.been.calledWithExactly('somedir')
 	});
 });
