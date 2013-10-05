@@ -32,5 +32,8 @@
     "sinon": "~1.7.3",
     "sinon-chai": "~2.4.0",
     "istanbul": "~0.1.44"
+  },
+  "dependencies": {
+    "require-middleware": "~0.1.0"
   }
 }
