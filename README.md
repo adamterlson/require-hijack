@@ -18,10 +18,10 @@ This is another library that manages to allow for mocking on require modules fro
 var realfs = require('fs');
 
 // From this point on out, all require calls will go through the mocker
-var requireMock = require('require-hijack');
+var requireHijack = require('require-hijack');
 
 var fakeFs = sinon.stub(fs);
-requireMock.replace('fs').with(fakeFs);
+requireHijack.replace('fs').with(fakeFs);
 
 var myModule = require('../lib/myModule');
 myModule.readDirectory();
@@ -29,4 +29,4 @@ myModule.readDirectory();
 fakeFs.readdir.should.have.been.called;
 ```````
 
-*Note* - Mock your sub-module's dependencies **before** loading your sub-module, otherwise those require calls will happen prior to the mocking goodness!
+*Note* - Hijack your sub-module's dependencies **before** loading your sub-module, otherwise those require calls will happen prior to the hijacking goodness!
