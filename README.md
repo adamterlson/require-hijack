@@ -35,17 +35,17 @@ fakeFs.readdir.should.have.been.called;
 
 Paths used are relative to the module doing the hijacking and not the module doing the requiring, in this way it can be referenced just like require and totally unambiguously.
 
-From your test:
+In `/test/test.js`:
 ````````javascript
-// From test
 var fake = {};
+// Paths passed work just like those to require, relative to the caller
 replace('./fixtures/someOtherModule').with(fake);
 
 // This module requires 'someOtherModule'
 require('./fixtures/someModule');
 ``````````````````
 
-In 'fixtures/someOtherModule':
+In `/test/fixtures/someOtherModule`:
 ````````javascript
 require('./someOtherModule') // Will yield the fake
 ``````````````````
