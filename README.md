@@ -45,7 +45,7 @@ replace('./fixtures/someOtherModule').with(fake);
 require('./fixtures/someModule');
 ``````````````````
 
-In `/test/fixtures/someOtherModule`:
+In `/test/fixtures/someOtherModule.js`:
 ````````javascript
 require('./someOtherModule') // Will yield the fake
 ``````````````````
