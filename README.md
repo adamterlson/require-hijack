@@ -31,6 +31,25 @@ fakeFs.readdir.should.have.been.called;
 
 *Note* - Hijack your sub-module's dependencies **before** loading your sub-module, otherwise those require calls will happen prior to the hijacking goodness!
 
+### Paths
+
+Paths used are relative to the module doing the hijacking and not the module doing the requiring, in this way it can be referenced just like require and totally unambiguously.
+
+From your test:
+````````javascript
+// From test
+var fake = {};
+replace('./fixtures/someOtherModule').with(fake);
+
+// This module requires 'someOtherModule'
+require('./fixtures/someModule');
+``````````````````
+
+In 'fixtures/someOtherModule':
+````````javascript
+require('./someOtherModule') // Will yield the fake
+``````````````````
+
 ## Restoring your replacement
 
 ````````javascript
