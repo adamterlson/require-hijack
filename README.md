@@ -37,9 +37,10 @@ Paths used are relative to the module doing the hijacking and not the module doi
 
 In `/test/test.js`:
 ````````javascript
+var requireHijack = require('require-hijack');
 var fake = {};
 // Paths passed work just like those to require, relative to the caller
-replace('./fixtures/someOtherModule').with(fake);
+requireHijack.replace('./fixtures/someOtherModule').with(fake);
 
 // This module requires 'someOtherModule'
 require('./fixtures/someModule');
