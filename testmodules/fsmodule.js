@@ -1,4 +1,3 @@
-console.log('loading fs');
 var fs = require('fs');
 exports = module.exports = function () {
 	console.log(fs);
