@@ -40,15 +40,15 @@ In `/test/test.js`:
 var requireHijack = require('require-hijack');
 var fake = {};
 // Paths passed work just like those to require, relative to the caller
-requireHijack.replace('./fixtures/someOtherModule').with(fake);
+requireHijack.replace('./fixtures/bar').with(fake);
 
-// This module requires 'someOtherModule'
-require('./fixtures/someModule');
+// foo requires bar
+require('./fixtures/foo');
 ``````````````````
 
 In `/test/fixtures/someOtherModule.js`:
 ````````javascript
-require('./someOtherModule') // Will yield the fake
+require('./bar') // Will yield the fake
 ``````````````````
 
 ## Restoring your replacement
