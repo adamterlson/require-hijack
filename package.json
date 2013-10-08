@@ -34,6 +34,6 @@
     "istanbul": "~0.1.44"
   },
   "dependencies": {
-    "require-middleware": "~0.1.0"
+    "require-middleware": "~1.0.0"
   }
 }
