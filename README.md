@@ -21,7 +21,7 @@ var realfs = require('fs');
 var requireHijack = require('require-hijack');
 
 var fakeFs = sinon.stub(fs);
-requireHijack.replace('fs').with(fakeFs);
+var replacement = requireHijack.replace('fs').with(fakeFs);
 
 var myModule = require('../lib/myModule');
 myModule.readDirectory();
@@ -30,3 +30,15 @@ fakeFs.readdir.should.have.been.called;
 ```````
 
 *Note* - Hijack your sub-module's dependencies **before** loading your sub-module, otherwise those require calls will happen prior to the hijacking goodness!
+
+## Restoring your replacement
+
+````````javascript
+var newModule = {};
+var replacement = requireHijack.replace('some-module').with(newModule);
+
+//restore
+replacement.restore();
+
+require('some-module'); // Gets the real module
+``````````````````
