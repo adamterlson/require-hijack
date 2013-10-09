@@ -46,7 +46,7 @@ requireHijack.replace('./fixtures/bar').with(fake);
 require('./fixtures/foo');
 ``````````````````
 
-In `/test/fixtures/someOtherModule.js`:
+In `/test/fixtures/foo.js`:
 ````````javascript
 require('./bar') // Will yield the fake
 ``````````````````
