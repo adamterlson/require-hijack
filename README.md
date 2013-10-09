@@ -1,7 +1,7 @@
 Require Hijack
 ============
 
-This is another library that manages to allow for mocking on require modules from a module that you're unit testing.
+This library enables mocking require calls.  This is particularly useful when unit testing a module that depends on another sub-module.
 
 ## How it differs:
 
@@ -35,19 +35,20 @@ fakeFs.readdir.should.have.been.called;
 
 Paths used are relative to the module doing the hijacking and not the module doing the requiring, in this way it can be referenced just like require and totally unambiguously.
 
-From your test:
+In `/test/test.js`:
 ````````javascript
-// From test
+var requireHijack = require('require-hijack');
 var fake = {};
-replace('./fixtures/someOtherModule').with(fake);
+// Paths passed work just like those to require, relative to the caller
+requireHijack.replace('./fixtures/bar').with(fake);
 
-// This module requires 'someOtherModule'
-require('./fixtures/someModule');
+// foo requires bar
+require('./fixtures/foo');
 ``````````````````
 
-In 'fixtures/someOtherModule':
+In `/test/fixtures/foo.js`:
 ````````javascript
-require('./someOtherModule') // Will yield the fake
+require('./bar') // Will yield the fake
 ``````````````````
 
 ## Restoring your replacement
