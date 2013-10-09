@@ -1,6 +1,6 @@
 {
   "name": "require-hijack",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Hijack node require calls, with support for hijacking the entire module itself rather than only its properties.  Handy for unit testing and mocking require calls in sub modules!",
   "main": "index.js",
   "scripts": {
