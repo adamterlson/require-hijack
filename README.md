@@ -17,7 +17,8 @@ This library enables mocking require calls.  This is particularly useful when un
 // You can pass any sort of object or function to `with()`
 var realfs = require('fs');
 
-// From this point on out, all require calls will go through the mocker
+// From this point on out, all require calls will go through the hijacker
+// Any calls not hijacked will be totally unaffected
 var requireHijack = require('require-hijack');
 
 var fakeFs = sinon.stub(realfs);
