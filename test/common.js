@@ -13,3 +13,5 @@ expect = chai.expect;
  */
 
 chai.use(sinonChai);
+
+requireHijack = require('../index');

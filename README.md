@@ -51,7 +51,7 @@ In `/test/fixtures/foo.js`:
 require('./bar') // Will yield the fake
 ``````````````````
 
-## Restoring your replacement
+## Restoring individual replacements
 
 ````````javascript
 var newModule = {};
@@ -61,4 +61,10 @@ var replacement = requireHijack.replace('some-module').with(newModule);
 replacement.restore();
 
 require('some-module'); // Gets the real module
+``````````````````
+
+## Restoring all replacements
+
+````````javascript
+requireHijack.restoreAll();
 ``````````````````
