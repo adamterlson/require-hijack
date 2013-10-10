@@ -20,7 +20,7 @@ var realfs = require('fs');
 // From this point on out, all require calls will go through the mocker
 var requireHijack = require('require-hijack');
 
-var fakeFs = sinon.stub(fs);
+var fakeFs = sinon.stub(realfs);
 var replacement = requireHijack.replace('fs').with(fakeFs);
 
 var myModule = require('../lib/myModule');
